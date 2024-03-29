@@ -3,6 +3,8 @@ package org.aliang.util;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.StringJoiner;
 import java.util.concurrent.TimeUnit;
 
@@ -67,6 +69,11 @@ public class CommonUtils {
                 .add(message)
                 .toString();
         System.out.println(result);
+    }
+
+    private static String getCurrentTime() {
+        LocalTime time = LocalTime.now();
+        return time.format(DateTimeFormatter.ofPattern("[HH:mm:ss.SSS]"));
     }
 
     public static void main(String[] args) {
